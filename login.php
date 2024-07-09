@@ -15,7 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['email'] = $email;
         header("location: welcome.php");
     } else {
-        echo "Usuario o clave incorrectos.";
+        $_SESSION['error'] = "Usuario o clave incorrectos.";
+        header("location: index.php");
+        exit();
     }
 }
 ?>
